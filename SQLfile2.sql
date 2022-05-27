@@ -20,3 +20,18 @@ alter table Course1 alter column Id int not null
 alter table Course1 add City varchar(40)
 alter table Course1 add gity varchar(40)
 alter table Course1 drop column gity 
+
+create table Orders(
+orderId int,
+orderNo int,
+Id int,
+constraint pk_order primary key(orderId),
+constraint pk_order_Course1 foreign key (Id) references Course1(Id)
+)
+
+select * from Orders
+
+alter table Orders add constraint pk_order_person 
+foreign key (personId) references Person(personId)
+
+
